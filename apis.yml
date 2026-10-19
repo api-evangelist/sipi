@@ -1,41 +1,28 @@
 aid: sipi
-
 name: GitDealFlow
-
 image: https://sipi.bot/og.png
-
 description: GitDealFlow, operating as sipi.bot, provides a pre‑spend firewall for autonomous AI agents. It lets developers set budget caps, velocity
   limits, and merchant rules so that every proposed payment is evaluated before execution. The service offers a free live sandbox, detailed pricing,
   and integrations with major AI frameworks, aiming to prevent uncontrolled spending in the agent economy.
-
 url: https://raw.githubusercontent.com/api-evangelist/sipi/refs/heads/main/apis.yml
-
 x-type: company
-
 x-source: harvest:g2-catalog
-
 x-tier: profiled
 x-tier-reason: enrichment pass 2026-10-19 (modular-v1; was harvest)
-
 specificationVersion: '0.20'
-
 created: '2026-10-18'
-
 modified: '2026-10-18'
-
 tags:
 - AI
 - Finance
 - Security
 - Automation
 - SaaS
-
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-
 common:
 - type: AgenticAccess
   url: agentic-access/sipi-agentic-access.yml
@@ -109,16 +96,133 @@ common:
   url: https://sipi.bot/privacy
 - type: Postman
   url: https://www.postman.com/kindrat86/workspace/sipi-bot
-
 apis:
-- name: sipi
-  description: Spend Firewall for AI Agents API
+- aid: sipi:sipi-agents-api
+  name: GitDealFlow Agents API
+  description: Register agents and issue API keys
   humanURL: https://sipi.bot/guides/
-  baseURL: https://sipi.bot
+  tags:
+  - Agents
   properties:
   - type: OpenAPI
-    url: openapi/sipi-openapi.json
-  aid: sipi:sipi
+    url: openapi/sipi-agents-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/sipi-rule-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-evaluation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-request-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-rule-create-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-stats-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-schema.json
+- aid: sipi:sipi-approvals-api
+  name: GitDealFlow Approvals API
+  description: Human-in-the-loop approval queue for FLAGGED transactions
+  humanURL: https://sipi.bot/guides/
+  tags:
+  - Approvals
+  properties:
+  - type: OpenAPI
+    url: openapi/sipi-approvals-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/sipi-rule-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-evaluation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-request-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-rule-create-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-stats-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-schema.json
+- aid: sipi:sipi-budget-api
+  name: GitDealFlow Budget API
+  description: Live spend activity, budget status, and dashboard aggregates
+  humanURL: https://sipi.bot/guides/
+  tags:
+  - Budget
+  properties:
+  - type: OpenAPI
+    url: openapi/sipi-budget-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/sipi-rule-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-evaluation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-request-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-rule-create-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-stats-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-schema.json
+- aid: sipi:sipi-evaluate-api
+  name: GitDealFlow Evaluate API
+  description: The core spend-decision call an agent makes
+  humanURL: https://sipi.bot/guides/
+  tags:
+  - Evaluate
+  properties:
+  - type: OpenAPI
+    url: openapi/sipi-evaluate-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/sipi-rule-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-evaluation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-request-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-rule-create-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-stats-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-schema.json
+- aid: sipi:sipi-rules-api
+  name: GitDealFlow Rules API
+  description: Create, list, and delete spend-policy rules
+  humanURL: https://sipi.bot/guides/
+  tags:
+  - Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/sipi-rules-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/sipi-rule-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-evaluation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-request-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-rule-create-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-stats-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-schema.json
+- aid: sipi:sipi-system-api
+  name: GitDealFlow System API
+  description: Service health and metadata
+  humanURL: https://sipi.bot/guides/
+  tags:
+  - System
+  properties:
+  - type: OpenAPI
+    url: openapi/sipi-system-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/sipi-rule-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-evaluation-response-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-request-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-rule-create-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-stats-schema.json
+  - type: JSONSchema
+    url: json-schema/sipi-transaction-schema.json
 x-enrichment:
   date: '2026-10-19'
   status: enriched

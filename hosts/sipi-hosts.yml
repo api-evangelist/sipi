@@ -42,6 +42,8 @@ hosts:
   - contract-discovery
   - well-known
   types:
+  - Compliance
+  - Security
   - Website
   - DeveloperPortal
   - Documentation
@@ -49,7 +51,6 @@ hosts:
   - GettingStarted
   - Support
   - Blog
-  - Roadmap
   - Pricing
   - SignUp
   - TermsOfService
@@ -64,9 +65,12 @@ hosts:
 - host: www.postman.com
   found_by:
   - pointer
+  - vendor-detect
   types:
   - Postman
-  serves: []
+  serves:
+  - api-collections
+  vendor: postman
   registrable_domain: postman.com
   role: collections
   relation: platform

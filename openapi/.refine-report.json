@@ -1,0 +1,24 @@
+{
+  "provider": "sipi",
+  "sources": [
+    "sipi-openapi.json"
+  ],
+  "outputs": [
+    "sipi-agents-api-openapi.yml",
+    "sipi-approvals-api-openapi.yml",
+    "sipi-budget-api-openapi.yml",
+    "sipi-evaluate-api-openapi.yml",
+    "sipi-rules-api-openapi.yml",
+    "sipi-system-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/sipi-openapi.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sipi-openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+6 apis, 6 total)"
+  ],
+  "skipped": []
+}

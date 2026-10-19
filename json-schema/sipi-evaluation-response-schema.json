@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sipi/main/json-schema/sipi-evaluation-response-schema.json",
+  "title": "EvaluationResponse",
+  "x-generated": "2026-10-19",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/sipi-openapi.json#/components/schemas/EvaluationResponse",
+  "type": "object",
+  "properties": {
+    "decision": {
+      "$ref": "#/$defs/Decision"
+    },
+    "reason": {
+      "type": "string",
+      "description": "Human-readable explanation; the rule label if a rule tripped."
+    },
+    "rule_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "ID of the rule that decided the outcome, if any."
+    },
+    "triggered": {
+      "type": "array",
+      "description": "Every rule that matched this transaction (in evaluation order).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "rule_id": {
+            "type": "string"
+          },
+          "rule_type": {
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/$defs/Decision"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "transaction_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Audit-log ID for the recorded transaction."
+    },
+    "amount": {
+      "type": "number"
+    },
+    "merchant": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "Decision": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "BLOCKED",
+        "FLAGGED"
+      ],
+      "description": "APPROVED = pass all rules. BLOCKED = violates a hard rule, no money moves. FLAGGED = allowed but crosses an approval threshold, routed to the human queue."
+    }
+  }
+}

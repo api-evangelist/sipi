@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sipi/main/json-schema/sipi-transaction-request-schema.json",
+  "title": "TransactionRequest",
+  "x-generated": "2026-10-19",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/sipi-openapi.json#/components/schemas/TransactionRequest",
+  "type": "object",
+  "required": [
+    "amount"
+  ],
+  "properties": {
+    "amount": {
+      "type": "number",
+      "format": "float",
+      "description": "Transaction amount in the given currency."
+    },
+    "merchant": {
+      "type": "string",
+      "description": "Merchant name or domain the agent wants to pay."
+    },
+    "category": {
+      "type": "string",
+      "description": "Spend category, e.g. compute / api / ads / travel."
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code.",
+      "default": "USD"
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional free-text description of the proposed spend."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional ISO-8601 timestamp; defaults to now (UTC)."
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sipi/main/json-schema/sipi-rule-create-schema.json",
+  "title": "RuleCreate",
+  "x-generated": "2026-10-19",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/sipi-openapi.json#/components/schemas/RuleCreate",
+  "type": "object",
+  "required": [
+    "rule_type"
+  ],
+  "properties": {
+    "rule_type": {
+      "type": "string",
+      "enum": [
+        "per_transaction",
+        "daily_total",
+        "velocity",
+        "merchant_block",
+        "merchant_allow",
+        "category_limit",
+        "time_window",
+        "approval_threshold"
+      ]
+    },
+    "params": {
+      "type": "object",
+      "description": "Rule-type-specific parameters."
+    },
+    "action": {
+      "$ref": "#/$defs/Decision",
+      "default": "BLOCKED"
+    },
+    "priority": {
+      "type": "integer",
+      "default": 100
+    },
+    "label": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "$defs": {
+    "Decision": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "BLOCKED",
+        "FLAGGED"
+      ],
+      "description": "APPROVED = pass all rules. BLOCKED = violates a hard rule, no money moves. FLAGGED = allowed but crosses an approval threshold, routed to the human queue."
+    }
+  }
+}

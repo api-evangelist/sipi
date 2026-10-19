@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/sipi/main/json-schema/sipi-rule-schema.json",
+  "title": "Rule",
+  "x-generated": "2026-10-19",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/sipi-openapi.json#/components/schemas/Rule",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "rule_type": {
+      "type": "string",
+      "enum": [
+        "per_transaction",
+        "daily_total",
+        "velocity",
+        "merchant_block",
+        "merchant_allow",
+        "category_limit",
+        "time_window",
+        "approval_threshold"
+      ],
+      "description": "The rule check to apply."
+    },
+    "params": {
+      "type": "object",
+      "description": "Rule-type-specific parameters."
+    },
+    "action": {
+      "$ref": "#/$defs/Decision"
+    },
+    "priority": {
+      "type": "integer",
+      "default": 100,
+      "description": "Higher priority rules are evaluated first. First BLOCK wins."
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "label": {
+      "type": "string",
+      "description": "Optional human label used as the reason when the rule trips."
+    },
+    "agent_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Scope this rule to a specific agent. null = global."
+    }
+  },
+  "$defs": {
+    "Decision": {
+      "type": "string",
+      "enum": [
+        "APPROVED",
+        "BLOCKED",
+        "FLAGGED"
+      ],
+      "description": "APPROVED = pass all rules. BLOCKED = violates a hard rule, no money moves. FLAGGED = allowed but crosses an approval threshold, routed to the human queue."
+    }
+  }
+}
