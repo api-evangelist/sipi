@@ -1,0 +1,149 @@
+{
+  "@context": {
+    "@vocab": "https://sipi.bot/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "sipi": "https://sipi.bot/schema#",
+    "TransactionRequest": "sipi:TransactionRequest",
+    "amount": {
+      "@id": "sipi:amount",
+      "@type": "xsd:decimal"
+    },
+    "merchant": {
+      "@id": "sipi:merchant",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "sipi:category",
+      "@type": "xsd:string"
+    },
+    "currency": {
+      "@id": "sipi:currency",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "sipi:description",
+      "@type": "xsd:string"
+    },
+    "timestamp": {
+      "@id": "sipi:timestamp",
+      "@type": "xsd:dateTime"
+    },
+    "Decision": "sipi:Decision",
+    "EvaluationResponse": "sipi:EvaluationResponse",
+    "decision": {
+      "@id": "sipi:decision",
+      "@type": "@id"
+    },
+    "reason": {
+      "@id": "sipi:reason",
+      "@type": "xsd:string"
+    },
+    "rule_id": {
+      "@id": "sipi:rule_id",
+      "@type": "xsd:string"
+    },
+    "triggered": {
+      "@id": "sipi:triggered",
+      "@container": "@list"
+    },
+    "transaction_id": {
+      "@id": "sipi:transaction_id",
+      "@type": "xsd:string"
+    },
+    "Rule": "sipi:Rule",
+    "id": {
+      "@id": "sipi:id",
+      "@type": "xsd:string"
+    },
+    "rule_type": {
+      "@id": "sipi:rule_type",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "sipi:params"
+    },
+    "action": {
+      "@id": "sipi:action",
+      "@type": "@id"
+    },
+    "priority": {
+      "@id": "sipi:priority",
+      "@type": "xsd:integer"
+    },
+    "enabled": {
+      "@id": "sipi:enabled",
+      "@type": "xsd:boolean"
+    },
+    "label": {
+      "@id": "sipi:label",
+      "@type": "xsd:string"
+    },
+    "agent_id": {
+      "@id": "sipi:agent_id",
+      "@type": "xsd:string"
+    },
+    "RuleCreate": "sipi:RuleCreate",
+    "Approval": "sipi:Approval",
+    "status": {
+      "@id": "sipi:status",
+      "@type": "xsd:string"
+    },
+    "created_at": {
+      "@id": "sipi:created_at",
+      "@type": "xsd:dateTime"
+    },
+    "Agent": "sipi:Agent",
+    "name": {
+      "@id": "sipi:name",
+      "@type": "xsd:string"
+    },
+    "api_key": {
+      "@id": "sipi:api_key",
+      "@type": "xsd:string"
+    },
+    "Transaction": "sipi:Transaction",
+    "Stats": "sipi:Stats",
+    "total_transactions": {
+      "@id": "sipi:total_transactions",
+      "@type": "xsd:integer"
+    },
+    "approved": {
+      "@id": "sipi:approved",
+      "@type": "xsd:integer"
+    },
+    "blocked": {
+      "@id": "sipi:blocked",
+      "@type": "xsd:integer"
+    },
+    "flagged": {
+      "@id": "sipi:flagged",
+      "@type": "xsd:integer"
+    },
+    "pending_approvals": {
+      "@id": "sipi:pending_approvals",
+      "@type": "xsd:integer"
+    },
+    "active_rules": {
+      "@id": "sipi:active_rules",
+      "@type": "xsd:integer"
+    },
+    "daily_spend": {
+      "@id": "sipi:daily_spend",
+      "@type": "xsd:decimal"
+    },
+    "Error": "sipi:Error",
+    "error": {
+      "@id": "sipi:error",
+      "@type": "xsd:string"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "GitDealFlow API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects GitDealFlow's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-19) from openapi/sipi-openapi.json.",
+  "dcterms:created": "2026-10-19",
+  "dcterms:source": [
+    "openapi/sipi-openapi.json"
+  ]
+}

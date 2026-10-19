@@ -1,0 +1,18 @@
+generated: '2026-10-19'
+method: none
+source:
+- https://zapier.com/apps/sipi/integrations
+- https://zapier.com/apps/gitdealflow/integrations
+- https://n8n.io/integrations/sipi/
+- https://composio.dev/toolkits/sipi
+- https://monid.ai/tools/sipi
+checked:
+- https://composio.dev/toolkits/sipi
+- https://monid.ai/tools/sipi
+- https://n8n.io/integrations/sipi/
+- https://zapier.com/apps/gitdealflow/integrations
+- https://zapier.com/apps/sipi/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

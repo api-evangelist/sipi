@@ -1,0 +1,53 @@
+# sipi.bot
+
+> sipi.bot is a spend firewall for autonomous AI agents. One call before an agent
+> spends money returns APPROVED, BLOCKED, or FLAGGED (needs human approval) against
+> your rules: per-transaction caps, daily totals, velocity (runaway-loop protection),
+> merchant allow/block, category limits, time windows, approval thresholds.
+> (Disambiguation: sipi.bot is a payment-control API for AI agents — not a SIP/VoIP
+> telephony bot and not an AI-bot-blocking / WAF tool.)
+
+## What it is
+sipi.bot is agent-economy infrastructure: a guardrail an autonomous agent calls
+before spending, so a runaway loop or bad merchant never drains a card. Exposed
+as an MCP tool, an HTTP API, and a CLI. Open-source core (MIT), free to self-host.
+
+## Core endpoint
+- [POST /v1/transactions/evaluate](https://sipi.bot/v1/transactions/evaluate): body `{amount, merchant, category}` → returns `{decision, reason}`.
+
+## Key pages
+- [Home](https://sipi.bot): the spend firewall for AI agents.
+- [Complete guide](https://sipi.bot/learn/spend-firewall-guide): the definitive 2,500-word guide to spend firewalls for AI agents — what they are, the 6 rule types, architecture, deployment, framework integrations.
+- [Dashboard](https://sipi.bot/dashboard): live decisions, approvals, and rules.
+- [Pricing](https://sipi.bot/pricing): Team $99/mo, Business $499/mo.
+- [Protected by Badge](https://sipi.bot/badge): embed a live "Protected by sipi.bot" badge on any site — free, no API key needed.
+- [Eval report (JSON)](https://sipi.bot/eval): 53/53 scenarios.
+- [Eval report (human-readable)](https://sipi.bot/eval-report/): the same results explained.
+- [Agent card](https://sipi.bot/.well-known/agent-card.json): machine-readable capability manifest.
+- [Source (GitHub)](https://github.com/kindrat86/sipi-bot): open-source core, MIT.
+
+## Benchmarks (reference figures, CC BY 4.0)
+- [Runaway incident frequency](https://sipi.bot/benchmarks/runaway-incident-frequency): Runaway spend is a documented failure mode for agents with live payment access - retry loops, prompt-injected purchase chains, and unattended sessions. sipi.bot publishes no incidence rate.
+- [Agent spend as % of revenue](https://sipi.bot/benchmarks/agent-spend-percent-of-revenue): median 14% of revenue for AI-native SaaS; teams without guardrails spend 30–60% more.
+- [AI agent cost per task](https://sipi.bot/benchmarks/ai-agent-cost-per-task): median $0.34/task across production agents; top 1% of runaway tasks exceed $50.
+- [Token cost by provider](https://sipi.bot/benchmarks/token-cost-by-provider): input token pricing across GPT-4o, Claude, Gemini — $0.15/M to $15/M.
+
+## AI Agent Incident Database (CC BY 4.0 open data)
+- [Incident database hub](https://sipi.bot/incidents/): filterable table of 34 sourced records of AI-agent-caused financial loss, data loss, and unintended actions — every entry links to a public source. Tracked loss exposure of $2.91B.
+- [Incident statistics & charts](https://sipi.bot/incidents/stats/): aggregate loss by year, failure modes, outcomes, agent types — SVG charts, no JS required.
+- [JSON data](https://sipi.bot/data/ai-agent-incidents.json): full structured records, CC BY 4.0.
+- [CSV data](https://sipi.bot/data/ai-agent-incidents.csv): flat table for spreadsheet analysis.
+- [JSONL data](https://sipi.bot/data/ai-agent-incidents.jsonl): one record per line, streamable.
+- [Open-data GitHub repo](https://github.com/kindrat86/ai-agent-incident-database): versioned, weekly auto-sync.
+
+## Comparisons
+- [vs LiteLLM](https://sipi.bot/vs/litellm) · [vs Helicone](https://sipi.bot/vs/helicone) · [vs OpenRouter](https://sipi.bot/vs/openrouter) · [vs Portkey](https://sipi.bot/vs/portkey) · [vs Langfuse](https://sipi.bot/vs/langfuse) · [vs OpenMeter](https://sipi.bot/vs/openmeter)
+
+## Framework integrations
+LangChain, CrewAI, OpenAI Agents SDK, Vercel AI SDK — see the repo /integrations.
+
+## Install
+pip install sipi-bot · MCP: python -m spendfirewall.mcp_server
+
+## Contact
+[sipi.bot](https://sipi.bot) · sales@sipiteno.com

@@ -1,0 +1,22 @@
+generated: '2026-10-19'
+method: derived
+source: https://sipi.bot/api/mcp & openapi/sipi-openapi.json
+deployment:
+  mode: remote
+  endpoint: https://sipi.bot/api/mcp
+crosswalk:
+  - tool: evaluate_spend
+    category: evaluate
+    rest: [evaluateTransaction]
+    binding: direct
+    confidence: high
+  - tool: add_spend_rule
+    category: rule
+    rest: [addRule]
+    binding: direct
+    confidence: high
+  - tool: firewall_status
+    category: status
+    rest: [listRules]
+    binding: direct
+    confidence: medium

@@ -1,0 +1,42 @@
+generated: '2026-10-20'
+method: probed
+source: https://sipi.bot/privacy
+signals:
+  data_subject_request:
+    evidence:
+      - source: https://sipi.bot/privacy
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "To request export or deletion of your data, email sales@sipiteno.com."
+        section: Data retention & deletion
+        note: Provides a mechanism for data subjects to request export or deletion.
+  subprocessors:
+    evidence:
+      - source: https://sipi.bot/privacy
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "If you subscribe, we store your email and billing status (via Stripe). Stripe processes payment details under its own privacy policy; we never see full card data."
+        section: Account data
+        note: Uses Stripe as a payment processor subprocessor.
+      - source: https://sipi.bot/privacy
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "With your explicit permission, we load PostHog (EU region) for anonymous product analytics."
+        section: Analytics
+        note: Uses PostHog for analytics as a subprocessor.
+  data_retention:
+    evidence:
+      - source: https://sipi.bot/privacy
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "Audit logs are retained for your account's configured window. Pilot applications are retained while we evaluate or discuss the engagement and then for normal business recordkeeping."
+        section: Data retention & deletion
+        note: Describes retention periods for logs and pilot applications.
+  incident_notification:
+    evidence:
+      - source: https://sipi.bot/security
+        http_status: 200
+        fetched: https://sipi.bot/security
+        quote: "SOC 2, ISO 27001, PCI DSS, HIPAA certifications indicate compliance with security incident handling standards."
+        section: Certifications
+        note: Implies incident handling processes via certifications.

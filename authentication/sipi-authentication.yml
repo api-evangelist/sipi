@@ -1,0 +1,14 @@
+generated: '2026-10-19'
+method: derived
+source: openapi/sipi-openapi.json
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  description: A checkout-issued or operator-created API key. ADMIN_TOKEN is accepted only for
+    operator control-plane access.
+  sources:
+  - openapi/sipi-openapi.json

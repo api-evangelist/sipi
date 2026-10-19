@@ -1,0 +1,47 @@
+generated: '2026-10-19'
+method: probed
+source: pre-flight dossier (docs platform, portal detections) + CNAME chains and response headers of the hosts apis.yml names
+registry: all/0-working/vendors.yml
+areas_vocabulary:
+- documentation
+- developer-portal
+- api-gateway
+- cdn
+- hosting
+- sdk-generation
+- api-collections
+- status-page
+- support
+- community
+- identity
+- mcp-hosting
+vendors:
+- vendor: postman
+  name: Postman
+  area: api-collections
+  host: www.postman.com
+  evidence: https://www.postman.com/kindrat86/workspace/sipi-bot
+  signal: url:postman.com
+  confidence: high
+  kin_score:
+  - postman_collection
+reliance:
+  areas_vendor_served:
+  - api-collections
+  vendor_count: 1
+  areas_observed: 12
+  share_of_observable_areas: 0.083
+  note: areas where a third party was DETECTED serving this provider; an area absent here was either self-run or not observed, and this script
+    cannot tell those apart
+checked:
+- 'docs-platform: no-docs-host'
+- sipi.bot (Website)
+- sipi.bot (DeveloperPortal)
+- sipi.bot (Documentation)
+- sipi.bot (APIReference)
+- sipi.bot (GettingStarted)
+- sipi.bot (Support)
+- sipi.bot (SignUp)
+- www.postman.com (Postman)
+- sipi.bot (baseURL)
+- sipi.bot (mcp)

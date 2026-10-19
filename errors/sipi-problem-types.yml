@@ -1,0 +1,20 @@
+generated: '2026-10-19'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/sipi-openapi.json
+format: custom
+envelope:
+  media_type: application/json
+  schema: Error
+coverage:
+  operations: 13
+  statuses_declared: 1
+problems:
+- status: 400
+  title: Bad Request
+  description: Invalid request body.
+  operations: 1
+  media_types:
+  - application/json
+  schema: Error

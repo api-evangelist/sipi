@@ -1,0 +1,26 @@
+generated: '2026-10-19'
+method: searched
+source: https://sipi.bot/pricing
+name: sipi pricing
+audience: developer-api
+pricing_basis: flat-platform
+plans:
+  - name: Team
+    price_text: "$99 / month"
+    price: 99
+    currency: USD
+    billing_period: month
+    features:
+      - Unlimited transaction evaluations
+      - All rule types + human approval queue
+      - Dashboard, audit log, MCP, HTTP + CLI
+      - API key issued immediately after payment
+    limits: []
+  - name: Playground
+    price_text: "$0"
+    price: 0
+    currency: USD
+    billing_period: month
+    features:
+      - Free sandbox testing
+    limits: []

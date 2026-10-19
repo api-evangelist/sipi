@@ -1,0 +1,91 @@
+generated: '2026-10-19'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/sipi-openapi.json
+vocabulary:
+  name: GitDealFlow Domain Vocabulary
+  description: 'Terms declared by GitDealFlow''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-19'
+  terms:
+  - term: Evaluate
+    definition: The core spend-decision call an agent makes
+    tags:
+    - Resource Group
+    source: openapi/sipi-openapi.json
+  - term: Rules
+    definition: Create, list, and delete spend-policy rules
+    tags:
+    - Resource Group
+    source: openapi/sipi-openapi.json
+  - term: Approvals
+    definition: Human-in-the-loop approval queue for FLAGGED transactions
+    tags:
+    - Resource Group
+    source: openapi/sipi-openapi.json
+  - term: Agents
+    definition: Register agents and issue API keys
+    tags:
+    - Resource Group
+    source: openapi/sipi-openapi.json
+  - term: Budget
+    definition: Live spend activity, budget status, and dashboard aggregates
+    tags:
+    - Resource Group
+    source: openapi/sipi-openapi.json
+  - term: System
+    definition: Service health and metadata
+    tags:
+    - Resource Group
+    source: openapi/sipi-openapi.json
+  - term: TransactionRequest
+    definition: 'Object declared by the contract with fields: amount, merchant, category, currency, description, timestamp.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/TransactionRequest
+  - term: Decision
+    definition: APPROVED = pass all rules. BLOCKED = violates a hard rule, no money moves. FLAGGED = allowed but crosses an approval threshold,
+      routed to the human queue.
+    tags:
+    - Enumeration
+    source: openapi/sipi-openapi.json#/components/schemas/Decision
+  - term: EvaluationResponse
+    definition: 'Object declared by the contract with fields: decision, reason, rule_id, triggered, transaction_id, amount, merchant, category.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/EvaluationResponse
+  - term: Rule
+    definition: 'Object declared by the contract with fields: id, rule_type, params, action, priority, enabled, label, agent_id.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/Rule
+  - term: RuleCreate
+    definition: 'Object declared by the contract with fields: rule_type, params, action, priority, label.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/RuleCreate
+  - term: Approval
+    definition: 'Object declared by the contract with fields: id, transaction_id, status, amount, merchant, reason, created_at.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/Approval
+  - term: Agent
+    definition: 'Object declared by the contract with fields: id, name, api_key, created_at.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/Agent
+  - term: Transaction
+    definition: 'Object declared by the contract with fields: id, amount, merchant, category, decision, reason, agent_id, timestamp.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/Transaction
+  - term: Stats
+    definition: 'Live dashboard aggregates: totals, decision breakdown, current budget posture.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/Stats
+  - term: Error
+    definition: 'Object declared by the contract with fields: error.'
+    tags:
+    - Object
+    source: openapi/sipi-openapi.json#/components/schemas/Error

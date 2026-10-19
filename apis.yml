@@ -1,24 +1,82 @@
 aid: sipi
+
 name: GitDealFlow
-description: 'GitDealFlow is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://sipi.bot/og.png
+
+description: GitDealFlow, operating as sipi.bot, provides a pre‑spend firewall for autonomous AI agents. It lets developers set budget caps, velocity
+  limits, and merchant rules so that every proposed payment is evaluated before execution. The service offers a free live sandbox, detailed pricing,
+  and integrations with major AI frameworks, aiming to prevent uncontrolled spending in the agent economy.
+
 url: https://raw.githubusercontent.com/api-evangelist/sipi/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-19 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-18'
+
 modified: '2026-10-18'
+
 tags:
-- Company
-apis: []
+- AI
+- Finance
+- Security
+- Automation
+- SaaS
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: AgenticAccess
+  url: agentic-access/sipi-agentic-access.yml
+- type: Plans
+  url: plans/sipi-plans-pricing.yml
+- type: Spectral
+  url: rules/sipi-rules.yml
+- type: JSONLD
+  url: json-ld/sipi-context.jsonld
+- type: Vocabulary
+  url: vocabulary/sipi-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/sipi-data-model.yml
+- type: Compliance
+  url: https://sipi.bot/security
+- type: Security
+  url: https://sipi.bot/privacy
+- type: ErrorCatalog
+  url: errors/sipi-problem-types.yml
+- type: Conformance
+  url: conformance/sipi-conformance.yml
+- type: LLMsTxt
+  url: llms/sipi-llms.txt
+- type: AgentCard
+  url: a2a/sipi-a2a.yml
+- type: ToolCrosswalk
+  url: mcp/sipi-tool-crosswalk.yml
+- type: MCPServer
+  url: mcp/sipi-mcp.yml
+- type: SecurityTxt
+  url: well-known/sipi-security.txt
+- type: WellKnown
+  url: well-known/sipi-well-known.yml
+- type: Hosts
+  url: hosts/sipi-hosts.yml
+- type: Vendors
+  url: vendors/sipi-vendors.yml
+- type: Authentication
+  url: authentication/sipi-authentication.yml
 - type: TrustCenter
   url: security/sipi-trust-center.yml
 - type: VulnerabilityDisclosure
@@ -27,3 +85,43 @@ common:
   url: security/sipi-domain-security.yml
 - type: Website
   url: https://sipi.bot/
+- type: DeveloperPortal
+  url: https://sipi.bot/
+- type: Documentation
+  url: https://sipi.bot/guides/
+- type: APIReference
+  url: https://sipi.bot/openapi.json
+- type: GettingStarted
+  url: https://sipi.bot/learn/how-to-control-ai-agent-spending
+- type: Support
+  url: https://sipi.bot/faq
+- type: Blog
+  url: https://sipi.bot/blog/
+- type: GitHubOrganization
+  url: https://github.com/kindrat86/sipi-bot
+- type: Pricing
+  url: https://sipi.bot/pricing
+- type: SignUp
+  url: https://sipi.bot/pilot
+- type: TermsOfService
+  url: https://sipi.bot/terms
+- type: PrivacyPolicy
+  url: https://sipi.bot/privacy
+- type: Postman
+  url: https://www.postman.com/kindrat86/workspace/sipi-bot
+
+apis:
+- name: sipi
+  description: Spend Firewall for AI Agents API
+  humanURL: https://sipi.bot/guides/
+  baseURL: https://sipi.bot
+  properties:
+  - type: OpenAPI
+    url: openapi/sipi-openapi.json
+  aid: sipi:sipi
+x-enrichment:
+  date: '2026-10-19'
+  status: enriched
+  artifacts_added: 28
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
