@@ -19,5 +19,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/sipi-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/sipi-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/sipi-domain-security.yml
 - type: Website
   url: https://sipi.bot/

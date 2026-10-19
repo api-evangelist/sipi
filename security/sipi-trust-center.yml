@@ -1,0 +1,17 @@
+generated: '2026-10-18'
+method: searched
+probe: true
+source: https://sipi.bot/security
+url: https://sipi.bot/security
+certifications:
+- SOC 2
+- ISO 27001
+- PCI DSS
+- HIPAA
+evidence:
+- source: https://sipi.bot/security
+  keywords:
+  - soc 2
+  - iso 27001
+  - pci-dss
+  - hipaa
