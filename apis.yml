@@ -13,6 +13,12 @@ specificationVersion: '0.20'
 created: '2026-10-18'
 modified: '2026-10-18'
 tags:
+- Artificial Intelligence
+- Finance
+- Security
+- Automation
+- Software-as-a-Service
+tags_raw:
 - AI
 - Finance
 - Security
@@ -144,6 +150,8 @@ apis:
   description: Live spend activity, budget status, and dashboard aggregates
   humanURL: https://sipi.bot/guides/
   tags:
+  - Budgets
+  tags_raw:
   - Budget
   properties:
   - type: OpenAPI
