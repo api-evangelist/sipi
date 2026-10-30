@@ -1,13 +1,6 @@
 openapi: 3.2.0
 info:
-  title: sipi.bot — Spend Firewall for AI Agents Budget API
-  description: 'sipi.bot sits in front of every transaction an autonomous AI agent attempts and evaluates it against your spend rules — per-transaction caps, daily totals, velocity (runaway-loop protection), merchant allow/block, category limits, time windows, and approval thresholds. It returns APPROVED, BLOCKED, or FLAGGED with a deterministic rules check, before a single dollar moves. Every decision is written to a queryable audit log.
-
-
-    **The core call an agent makes before spending:** `POST /v1/transactions/evaluate`.
-
-
-    Auth is optional only for the public evaluation sandbox. Pass `Authorization: Bearer ` for an isolated paid or operator-created workspace. Dashboard and control-plane routes require authentication.'
+  title: Sipi Budget API
   version: 0.1.0
   contact:
     name: sipi.bot
@@ -17,6 +10,7 @@ info:
     name: MIT
     url: https://github.com/kindrat86/sipi-bot/blob/main/LICENSE
   termsOfService: https://sipi.bot/terms
+  description: 'Operations tagged Budget across 2 of this provider''s published API definitions: sipi-openapi.json, sipi-openapi.json. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://sipi.bot
   description: Production
@@ -42,6 +36,9 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Transaction'
+    servers:
+    - url: https://sipi.bot
+      description: Production
   /api/stats:
     get:
       tags:
@@ -56,6 +53,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Stats'
+    servers:
+    - url: https://sipi.bot
+      description: Production
   /billing/status:
     get:
       tags:
@@ -72,6 +72,9 @@ paths:
             application/json:
               schema:
                 type: object
+    servers:
+    - url: https://sipi.bot
+      description: Production
 components:
   schemas:
     Transaction:
@@ -129,3 +132,6 @@ components:
 externalDocs:
   description: Agent card (A2A discovery)
   url: https://sipi.bot/.well-known/agent-card.json
+x-refined-from:
+- sipi-openapi.json
+- sipi-openapi.json

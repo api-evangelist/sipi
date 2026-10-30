@@ -1,6 +1,7 @@
 {
   "provider": "sipi",
   "sources": [
+    "_original/sipi-openapi.json",
     "sipi-openapi.json"
   ],
   "outputs": [
@@ -17,8 +18,23 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "sipi-openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apis.yml register: written (+6 apis, 6 total)"
+    "sipi-openapi.json: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "tag 'Agents' spans 2 source specs (sipi-openapi.json, sipi-openapi.json): per-path servers applied",
+    "tag 'Approvals' spans 2 source specs (sipi-openapi.json, sipi-openapi.json): per-path servers applied",
+    "tag 'Budget' spans 2 source specs (sipi-openapi.json, sipi-openapi.json): per-path servers applied",
+    "tag 'Evaluate' spans 2 source specs (sipi-openapi.json, sipi-openapi.json): per-path servers applied",
+    "tag 'Rules' spans 2 source specs (sipi-openapi.json, sipi-openapi.json): per-path servers applied",
+    "tag 'System' spans 2 source specs (sipi-openapi.json, sipi-openapi.json): per-path servers applied",
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "sipi-agents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sipi-approvals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sipi-budget-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sipi-evaluate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sipi-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sipi-system-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
