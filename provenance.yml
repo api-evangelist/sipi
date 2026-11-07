@@ -23,6 +23,9 @@ artifacts:
   errors/sipi-problem-types.yml:
     method: derived
     evidence: declared in the artifact
+  heartbeat/2026-11-06.yml:
+    method: unknown
+    evidence: no authorship recorded
   hosts/sipi-hosts.yml:
     method: derived
     evidence: declared in the artifact
@@ -90,10 +93,6 @@ artifacts:
     method: derived
     evidence: declared in the artifact
   openapi/_original/sipi-openapi.json:
-    method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
-  openapi/_original/sipi-openapi_2.json:
     method: harvested
     evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
       to the provider's source is unverified
